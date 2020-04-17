@@ -36,3 +36,15 @@ function isValidBST($root) {
 
     return $this->isValidBST($root->left) && $this->isValidBST($root->right);
 }
+
+
+//Much more efficient and concise but difficult to understand
+
+function isValidBST($root, $leftParent = null, $rightParent = null) {
+    if ($root === null) return true;
+
+    if ($leftParent !== null && $root->val <= $leftParent->val) return false;
+    if ($rightParent !== null && $root->val >= $rightParent->val) return false;
+
+    return $this->isValidBST($root->left, $leftParent, $root) && $this->isValidBST($root->right, $root, $rightParent);
+}
