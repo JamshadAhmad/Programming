@@ -13,7 +13,7 @@ class TreeNode {
  * @param TreeNode $root
  * @return Boolean
  */
-function isValidBST($root) {
+function isValidBstRecurse($root) {
     if ($root === null) { return true;}
     if ($root->left === null && $root->right === null) {return true;}
 
@@ -34,7 +34,7 @@ function isValidBST($root) {
         if ($root->val >= $current->val) {return false;}
     }
 
-    return $this->isValidBST($root->left) && $this->isValidBST($root->right);
+    return $this->isValidBstRecurse($root->left) && $this->isValidBstRecurse($root->right);
 }
 
 

@@ -149,23 +149,14 @@ class BST
 
     /**
      * @param Node|null $node
-     * @return bool|Generator
+     * @param array $output
      */
-    public function reverseWalk(Node $node = null)
+    public function inOrderTraverse(Node $node = null, &$output)
     {
-        if ($node === null) {
-            $node = $this->root;
-        }
-        if ($node === null) {
-            return false;
-        }
-
-        if ($node->right) {
-            yield from $this->walk($node->right);
-        }
-        yield $node;
-        if ($node->left) {
-            yield from $this->walk($node->left);
+        if ($node) {
+            $this->inOrderTraverse($node->left, $output);
+            $output[] = $node->value;
+            $this->inOrderTraverse($node->right, $output);
         }
     }
 
@@ -212,9 +203,7 @@ class BST
     public function toArrayValues()
     {
         $result = [];
-        foreach ($this->walk() as $node) {
-            $result[] = $node->value;
-        }
+        $this->inOrderTraverse($this->root, $result);
         return $result;
     }
 
@@ -223,8 +212,10 @@ class BST
      */
     public function printValues()
     {
-        foreach ($this->walk() as $node) {
-            echo $node->value . ' ';
+        $output = [];
+        $this->inOrderTraverse($this->root, $output);
+        foreach ($output as $val) {
+            echo $val . ' ';
         }
     }
 
