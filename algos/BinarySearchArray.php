@@ -47,15 +47,33 @@ if (getIndex($arr, 10) !== null) {
     echo '10 does not exist' . PHP_EOL;
 }
 
-if (getIndex($arr, 24) !== null) {
-    echo '24 exist' . PHP_EOL;
-} else {
-    echo '24 does not exist' . PHP_EOL;
+//Last stable build finder
+//Lets redefine it as finding the place where 0 is turned to 1 return index of first 1
+$arr = [0, 1];
+
+function changeFinder($arr) {
+    $s = count($arr);
+    $startIndex = 0;
+    $endIndex = $s - 1;
+    //you can add check for edge case $arr[0] === 1 then return 1
+
+    while ($startIndex <= $endIndex) {
+        $middle = floor(( $startIndex + $endIndex ) / 2);
+
+        if ($arr[$middle] === 0) {
+            if ($middle + 1 < $s && $arr[$middle+1] === 1) {
+                return $middle + 1;
+            }
+            $startIndex = $middle + 1;
+            continue;
+        }
+        if ($middle - 1 >= 0 && $arr[$middle - 1] === 0) {
+            return $middle;
+        }
+        $endIndex = $middle - 1;
+    }
+    return 'none'; //if all ZERO or all 1
 }
 
-if (getIndex($arr, 25) !== null) {
-    echo '25 exist' . PHP_EOL;
-} else {
-    echo '25 does not exist' . PHP_EOL;
-}
+echo changeFinder($arr) . PHP_EOL;
 

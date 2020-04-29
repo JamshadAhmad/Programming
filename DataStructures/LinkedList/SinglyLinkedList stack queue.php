@@ -89,7 +89,7 @@ class LinkedList
             return $this->head;
         }
 
-        //key is to always 3 three pointers for iterative solution
+        //key is to always use 3 three pointers for iterative solution
         $previous = null;
         $current = $this->head;
         while ($current !== null) {
@@ -109,6 +109,11 @@ class LinkedList
      * @param Node|null $head
      */
     public function reverseRecursive(Node $head = null)
+    {
+        //TODO implement later
+    }
+
+    public function cycleDetection()
     {
         //TODO implement later
     }
