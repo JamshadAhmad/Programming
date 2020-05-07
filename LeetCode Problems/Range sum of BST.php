@@ -12,30 +12,13 @@
  */
 
 class Solution {
-
     /**
      * @param TreeNode $root
      * @param Integer $L
      * @param Integer $R
      * @return Integer
      */
-    function rangeSumBST($root, $L, $R) { //Run time O(n) further can optimised by not going on useless routes
-        if ($root === null) {
-            return 0;
-        }
-        if ($root->val >= $L && $root->val <= $R) {
-            return $root->val + $this->rangeSumBST($root->left, $L, $R) + $this->rangeSumBST($root->right, $L, $R);
-        }
-        return $this->rangeSumBST($root->left, $L, $R) + $this->rangeSumBST($root->right, $L, $R);
-    }
-
-    /**
-     * @param TreeNode $root
-     * @param Integer $L
-     * @param Integer $R
-     * @return Integer
-     */
-    function rangeSumBST($root, $L, $R) { //Further optimized. Worst runtime is still O(n) but much improved than earlier
+    function rangeSumBST($root, $L, $R) { //Worst runtime is still O(n)
         if ($root === null) {
             return 0;
         }
