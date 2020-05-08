@@ -65,5 +65,9 @@ function expandAroundCentre($str, $l, $i, $j) {
     return $j - $i - 1; //key point is -1. eg 'abbc' $i is increment in loop and already on a and $j is on c
 }
 
+//then Manacher is the most optimal like near in O(n)
+//which inserts # special character around every character e.g. abc => #a#b#c#
+//and then expands around centre on each character but uses clever boundaries to move forward
+
 echo longestPalindrome('babad') . PHP_EOL;
 echo longestPalindrome2('babad') . PHP_EOL;
