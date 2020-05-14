@@ -231,4 +231,27 @@ class BST
         }
         return false;
     }
+
+    /**
+     * @param Node $node
+     * @param $value
+     * @return bool
+     */
+    public function printAncestry($node, $value)
+    {
+        if ($node) {
+            if ($node->value === $value) {
+                echo $value . ' ';
+                return true;
+            }
+            if (
+                $this->printAncestry($node->left, $value)
+                || $this->printAncestry($node->right, $value)
+            ) {
+                echo $node->value . ' ';
+                return true; //key point is to return true here for parent node
+            }
+        }
+        return false;
+    }
 }
