@@ -1,2 +1,11 @@
+#IDE (intellij) stored files
 .idea/*
+
+#Any temp output file or input objects if need
 tmp/*
+
+# Executables
+*.exe
+*.out
+*.app
+*.DS_Store
