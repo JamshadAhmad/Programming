@@ -4,4 +4,4 @@ For PHP files
 You may need to put `$this->` before a function call because in leetcode solution is in a class.
 - If you have cloned the repo, you can run via command line, simply `php [filename]`  
 - Otherwise, you can use any online php runner like [phpfiddle.org](http://phpfiddle.org)
-- Other ways to run are listed in [algos/README.md](../algos/)
+- Other ways to run, are listed in [Algos/README.md](../Algos/)

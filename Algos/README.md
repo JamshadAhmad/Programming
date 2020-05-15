@@ -1,4 +1,3 @@
-
 ### How to test/run php files  
 For PHP files  
 - If you have cloned the repo, you can run via command line, simply `php [filename]`  
@@ -6,4 +5,4 @@ For PHP files
   
 For JS files  
 - Run them in the browser's console  
-- or, you can run them in any online js runner like [jsbin.com](http://jsbin.com) or [jsfiddle.net](http://jsfiddle.net)  
+- or, you can run them in any online js runner like [jsbin.com](http://jsbin.com) or [jsfiddle.net](http://jsfiddle.net)
