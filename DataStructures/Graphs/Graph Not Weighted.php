@@ -162,7 +162,7 @@ class Graph {
             }
             //push all adjacent nodes into queue
             foreach ($currentNode->adjacent as $node) {
-                if (!array_key_exists($node->id, $visited)) { //I personally added this check as this avoids almost half cycles of while loop
+                if (!array_key_exists($node->id, $visited)) { //Added this check as this avoids almost half cycles of loop
                     $NextToVisit->enqueue($node);
                 }
             }
