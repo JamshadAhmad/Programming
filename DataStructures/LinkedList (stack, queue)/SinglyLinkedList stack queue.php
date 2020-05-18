@@ -179,6 +179,14 @@ class LinkedList
         echo PHP_EOL;
     }
 
+    public function printListReverse(Node $head = null)
+    {
+        if ($head) {
+            $this->printListReverse($head->next);
+            echo $head->val . ' ';
+        }
+    }
+
     public function getArray()
     {
         $output = [];
