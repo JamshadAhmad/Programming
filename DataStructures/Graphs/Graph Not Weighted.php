@@ -147,7 +147,7 @@ class Graph {
             return false;
         }
         $visited = [];
-        $NextToVisit = new SplQueue(); //Queue or LinkedList is needed for BFS
+        $NextToVisit = new SplQueue(); //Queue or LinkedList (stack, queue) is needed for BFS
         $NextToVisit->enqueue($fromNode);
 
         while (!$NextToVisit->isEmpty()) {

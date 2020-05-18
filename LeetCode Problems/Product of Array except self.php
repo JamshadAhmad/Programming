@@ -3,21 +3,27 @@
 
 function productExceptSelf($nums) { //Time O(n) 3 pass, Space O(n) if output array doesn't count
     $s = count($nums);
-    $out = [];
+
+    //[a, b, c, d] first I'll make multiplier array like [1, a, ab, abc] which means with which number should it multiply with
+
+    $multi1 = [];
     $m = 1;
-    for ($i = 0; $i < $s; $i++) { //have multipliers from left side
-        $out[] = $m; //most right number is already set after loop
-        $m = $m * $nums[$i];
-    }
-    $out2 = [];
-    $m = 1;
-    for ($i = $s - 1; $i >= 0; $i--) {//have multipliers from right side.
-        $out2[$i] = $m; //most left number is already set after loop
-        $m = $m * $nums[$i];
-    }
-    //now combine both products
     for ($i = 0; $i < $s; $i++) {
-        $out[$i] = $out[$i] * $out2[$i];
+        $multi1[] = $m;
+        $m = $m * $nums[$i];
+    }
+
+    $multi2 = [];
+    $m = 1;
+    for ($i = $s - 1; $i >= 0; $i--) {
+        $multi2[$i] = $m; //using $i is the key here, because of the order maters
+        $m = $m * $nums[$i];
+    }
+    //now we have $multi1 as [1, a, ab, abc] and $multi2 as [bcd, cd, d, 1]
+    // if we combine (product) them we will have our desired result = [bcd, acd, abd, abc] what we wanted
+    $out = [];
+    for ($i = 0; $i < $s; $i++) {
+        $out[] = $multi1[$i] * $multi2[$i];
     }
     return $out;
 }
