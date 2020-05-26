@@ -46,4 +46,8 @@ if (!$bst->exists(6) || !$bst->exists(97) || $bst->exists(7)) {
     echo 'exists() test failed' . PHP_EOL;
 }
 
+if (!$bst->isValidBST($bst->root)) {
+    echo 'isValidBST() test failed' . PHP_EOL;
+}
+
 echo 'End of file. All tests are run successfully.' . PHP_EOL;

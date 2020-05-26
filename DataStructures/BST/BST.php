@@ -254,4 +254,99 @@ class BST
         }
         return false;
     }
+
+    /**
+     * Returns Nodes, sum and count at each level of tree
+     * @param Node $node
+     * @param $levels
+     * @param int $l
+     */
+    public function levels(Node $node, &$levels, $l = 1)
+    {
+        if ($node) {
+            if (isset($levels[$l]) && array_key_exists('sum', $levels[$l])) {
+                $levels[$l]['nodes'][] = $node->value;
+                $levels[$l]['sum'] += $node->value;
+                $levels[$l]['count'] += 1;
+            } else {
+                $levels[$l]['nodes'] = [$node->value];
+                $levels[$l]['sum'] = $node->value;
+                $levels[$l]['count'] = 1;
+            }
+
+            if ($node->left) {
+                $this->levels($node->left, $levels, $l + 1);
+            }
+            if ($node->right) {
+                $this->levels($node->right, $levels, $l + 1);
+            }
+        }
+    }
+
+    /**
+     * @param Node|null $node
+     * @return bool return true if tree is almost balanced
+     */
+    public function isBalanced(Node $node = null) //O(n**2) since we get height of whole subtree at each step
+    {
+        if ($node === null) {
+            return true;
+        }
+        $lH = $this->getHeight($node->left);
+        $rH = $this->getHeight($node->right);
+
+        if (abs($lH - $rH) > 1) {
+            return false;
+        }
+
+        $isLB = $this->isBalanced($node->left);
+        $isRB = $this->isBalanced($node->right);
+
+        return $isLB && $isRB;
+    }
+
+    /**
+     * Returns height of any given node
+     * @param Node|null $node
+     * @param int $h
+     * @return int|mixed
+     */
+    public function getHeight(Node $node = null, $h = 0) //0 since null root will height zero
+    {
+        if ($node === null) {
+            return $h;
+        }
+        $lh = $this->getHeight($node->left, $h + 1);
+        $rh = $this->getHeight($node->right, $h + 1);
+        return max($lh, $rh);
+    }
+
+    /**
+     * Shorter and simpler version
+     * @param Node|null $node
+     * @return int|mixed
+     */
+    public function getHeight2(Node $node = null)
+    {
+        if ($node === null) {
+            return 0;
+        }
+        return 1 + max($this->getHeight($node->left), $this->getHeight($node->right));
+    }
+
+    /**
+     * Validates if Binary tree is BST
+     * @param $root
+     * @param null $leftParent
+     * @param null $rightParent
+     * @return bool
+     */
+    public function isValidBST($root, $leftParent = null, $rightParent = null) {
+        if ($root === null) { return true;}
+
+        if ($leftParent && $leftParent->value > $root->value) { return false; }
+        if ($rightParent && $rightParent->value < $root->value) { return false; }
+
+        return $this->isValidBST($root->left, $leftParent, $root) && $this->isValidBST($root->right, $root, $rightParent);
+    }
 }
