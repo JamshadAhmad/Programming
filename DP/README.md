@@ -5,6 +5,10 @@
 4) Order of Computation (eg. bottom-up)
 5) Location of the Answer (eg. F(n))
 
+Excellent Helping material:
+- [Dynamic programming Patterns (leetcode)](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
+- [Dynamic programming templates and how to solve in 4 steps (leetcode)](https://leetcode.com/discuss/general-discussion/651719/how-to-solve-dp-string-template-and-4-steps-to-be-followed)
+- [Dynamic programming for beginners (Youtube playlist)](https://www.youtube.com/watch?v=jTjRGe0wRvI&list=PLVrpF4r7WIhTT1hJqZmjP10nxsmrbRvlf)
 
 Linked problems
 - [(Medium) Unique paths to reach in rectangular grid](../LeetCode%20Problems/Unique%20paths%20to%20reach%20in%20rectangular%20grid.php)
