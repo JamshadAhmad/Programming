@@ -9,6 +9,5 @@
 Linked problems
 - [(Medium) Unique paths to reach in rectangular grid](../LeetCode%20Problems/Unique%20paths%20to%20reach%20in%20rectangular%20grid.php)
 - [(medium) Count battleships](../LeetCode%20Problems/Count%20Battle%20ships.php)
-
 - [(easy) Min cost to climb stairs](../LeetCode%20Problems/Min%20cost%20to%20climb%20stairs.php)
 

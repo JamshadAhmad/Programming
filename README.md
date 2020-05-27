@@ -6,8 +6,9 @@ Following directories contain implementation of
   
 1) [Algos](Algos/): Random popular algorithms and mostly a test cases  
 2) [DataStructures](DataStructures/): Some Data Structures with many test cases  
-3) [GeeksForGeeksProblems](GeeksForGeeksProblems/): problems on GeeksForGeeks.org website  
-4) [LeetCode Problems](LeetCode%20Problems/): problems of leetcode.com website  
+3) [DP (Dynamic Programming)](DP/): Some guidline and practice of DP
+4) [GeeksForGeeksProblems](GeeksForGeeksProblems/): problems on GeeksForGeeks.org website  
+5) [LeetCode Problems](LeetCode%20Problems/): problems of leetcode.com website  
   
 **Links:**  
 - [LinkedIn](https://www.linkedin.com/in/jamshadahmad/) (Has full professional details)  
