@@ -51,6 +51,21 @@ function fibDP($n) { //O(n) time and space, non-recursive
     return $dp[$n];
 }
 
+/**
+ * Further optimized DP solution
+ * @param $n
+ * @return int
+ */
+function fibDPO($n) { //O(n) time and O(1) space
+    $a = $b = $res = 1;
+    for ($i = 3 ; $i <= $n; $i++) {
+        $res = $a + $b; //result is sum of previous two
+        $b = $a; //make prevPrev = Prev
+        $a = $res; //make Prev = current
+    }
+    return $res;
+}
+
 $start = microtime(true);
 echo fibR(35) . ' time: ' . (int)((microtime(true) - $start)) . ' seconds' . PHP_EOL; //about 8 seconds
 
@@ -58,4 +73,7 @@ $start = microtime(true);
 echo fibRO(35) . ' time: ' . (int)((microtime(true) - $start) * 1000000) . PHP_EOL; //about  70 microseconds
 
 $start = microtime(true);
-echo fibDP(35) . ' time: ' . (int)((microtime(true) - $start) * 1000000) . PHP_EOL; //about 10 microseconds
+echo fibDP(35) . ' time: ' . (int)((microtime(true) - $start) * 1000000) . PHP_EOL; //about 12 microseconds
+
+$start = microtime(true);
+echo fibDPO(35) . ' time: ' . (int)((microtime(true) - $start) * 1000000) . PHP_EOL; //about 11 microseconds
