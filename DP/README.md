@@ -11,6 +11,7 @@ Excellent Helping material:
 - [Dynamic programming for beginners (Youtube playlist)](https://www.youtube.com/watch?v=jTjRGe0wRvI&list=PLVrpF4r7WIhTT1hJqZmjP10nxsmrbRvlf)
 
 Linked problems
+- [(Medium) Longest common subsequence](../LeetCode%20Problems/Longest%20common%20subsequence.php)
 - [(Medium) Unique paths to reach in rectangular grid](../LeetCode%20Problems/Unique%20paths%20to%20reach%20in%20rectangular%20grid.php)
 - [(medium) Count battleships](../LeetCode%20Problems/Count%20Battle%20ships.php)
 - [(easy) Min cost to climb stairs](../LeetCode%20Problems/Min%20cost%20to%20climb%20stairs.php)
