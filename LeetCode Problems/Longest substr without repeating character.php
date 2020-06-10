@@ -2,7 +2,7 @@
 
 //https://leetcode.com/problems/longest-substring-without-repeating-characters
 
-function lengthOfLongestSubstring($s) { //O(n) time and space. The inchworm method
+function lengthOfLongestSubstring($s) { //O(n) time and space O(26). The inchworm method
     $l = strlen($s);
     if ($l < 2) {return $l;}
     $maxLength = 1;
@@ -11,7 +11,7 @@ function lengthOfLongestSubstring($s) { //O(n) time and space. The inchworm meth
 
     for ($i = 0; $i < $l; ++$i) {
         if (array_key_exists($s[$i], $Indexes)) {
-            $start = max($start, $Indexes[$s[$i]] + 1); //move string start to next character of last occurence
+            $start = max($start, $Indexes[$s[$i]] + 1); //move string start to next character of last occurrence
         }
         $Indexes[$s[$i]] = $i; //store/override last index of each char
         $maxLength = max($maxLength, $i - $start + 1);
