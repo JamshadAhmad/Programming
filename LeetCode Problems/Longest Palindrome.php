@@ -26,16 +26,16 @@ function longestPalindrome($s) { //O(n) time and O(26+26) space
         }
     }
 
-    $sum = $hasOld = 0;
+    $sum = $hasOdd = 0;
     foreach ($hash as $k => $v) {
         if (($v % 2) === 0) {
             $sum += $v;
         } else {
             $sum += $v-1; //key point
-            $hasOld = 1;
+            $hasOdd = 1;
         }
     }
-    return $sum + $hasOld;
+    return $sum + $hasOdd;
 }
 
 echo longestPalindrome('abccccdd') . PHP_EOL; //should be 7

@@ -75,7 +75,7 @@ class LinkedList
 
     public function reverse()
     {
-        $this->reverseIterative($this->head);
+        $this->reverseIterative();
     }
 
     /**
@@ -115,7 +115,7 @@ class LinkedList
 
     public function cycleDetection()
     {
-        //TODO implement later
+        //implemented in LeetCode_Problems/LinkedList_cycle.php file
     }
 
     public function remove($val)
